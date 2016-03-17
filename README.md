@@ -1,2 +1,2 @@
 # yatmin.github.io
-yatminCSDN博客
+yatmin的个人主页
