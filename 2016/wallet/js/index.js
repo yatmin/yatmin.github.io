@@ -9,7 +9,7 @@ $(function()
 	$(".main .header ul li ul").mouseout(function()
 	{
 	    $(".main .header ul li").find("ul").css("display","none");
-               
+            $(this).find("ul").css("display","none").css("z-index","-999");      
 	})
 })
 
