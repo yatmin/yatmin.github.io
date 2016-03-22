@@ -131,7 +131,7 @@
 
 </head>
 
-<body  data-spy="scroll" data-target="#navbar-example">
+ <body  data-spy="scroll" data-target="#navbar-example">
 <!-- 顶部导航 -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
     <div class="container">
@@ -179,9 +179,9 @@
             <img src="images/1.jpg" alt="1 slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1 class="lingxin-font highlight wow bounceIn" data-wow-delay="0.2s">SUCCESS</h1>
-						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
-						<p class="wow fadeIn" data-wow-delay="1s">Let Us Show You the Way to Success</p>
+                    <h1  class="lingxin-font highlight wow  bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3  class="lingxin-font wow  bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
+						<p class="wow  fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
                 </div>
             </div>
         </div>
@@ -189,9 +189,9 @@
             <img src="images/2.jpg" alt="2 slide">
             <div class="container">
                 <div class="carousel-caption">
-                   <h1 class="lingxin-font highlight wow bounceIn" data-wow-delay="0.2s">SUCCESS</h1>
-						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
-						<p class="wow fadeIn" data-wow-delay="1s">Let Us Show You the Way to Success</p>
+                    <h1  class="lingxin-font highlight wow  bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3  class="lingxin-font wow  bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
+						<p class="wow  fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
                 </div>
             </div>
         </div>
@@ -199,9 +199,9 @@
             <img src="images/3.jpg" alt="3 slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1 class="lingxin-font highlight wow bounceIn" data-wow-delay="0.2s">SUCCESS</h1>
-						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
-						<p class="wow fadeIn" data-wow-delay="1s">Let Us Show You the Way to Success</p>
+                    <h1  class="lingxin-font highlight wow  bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3  class="lingxin-font wow  bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
+						<p class="wow  fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
                 </div>
             </div>
         </div>
@@ -209,10 +209,9 @@
             <img src="images/4.jpg" alt="4 slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1 class="lingxin-font highlight wow bounceIn" data-wow-delay="0.2s">SUCCESS</h1>
-						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
-						<p class="wow fadeIn" data-wow-delay="1s">Let Us Show You the Way to Success</p>
-
+                    <h1  class="lingxin-font highlight wow  bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3  class="lingxin-font wow  bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
+						<p class="wow  fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
                 </div>
             </div>
         </div>
@@ -220,9 +219,9 @@
             <img src="images/5.jpg" alt="5 slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1 class="lingxin-font highlight wow bounceIn" data-wow-delay="0.2s">SUCCESS</h1>
-						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
-						<p class="wow fadeIn" data-wow-delay="1s">Let Us Show You the Way to Success</p>
+                    <h1  class="lingxin-font highlight wow  bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3  class="lingxin-font wow  bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">让我们为您的<span class="highlight">成功</span>指引道路!</h3>
+						<p class="wow  fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
                 </div>
             </div>
         </div>
@@ -310,7 +309,7 @@
     <div class="modal fade" id="about-me" tabindex="-1" role="dialog" aria-labelledby="modal-label"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content"  id="modalme">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
@@ -373,6 +372,7 @@
     });
 </script>
 <script>
+//调用wow
 var wow = new WOW({
     boxClass: 'wow',
     animateClass: 'animated',
@@ -381,6 +381,46 @@ var wow = new WOW({
     live: true
 });
 wow.init();
+//
+
+var $myCarousel = $('#ad-carousel');
+// Initialize carousel
+$myCarousel.carousel();
+
+function doAnimations(elems) {
+  var animEndEv = 'webkitAnimationEnd animationend';
+  elems.each(function () {
+    var $this = $(this),
+        $animationType = $this.data('animation');
+    // Add animate.css classes to
+    // the elements to be animated 
+    // Remove animate.css classes
+    // once the animation event has ended
+    $this.addClass($animationType).one(animEndEv, function () {
+      $this.removeClass($animationType);
+    });
+  });
+}
+// Select the elements to be animated
+// in the first slide on page load
+var $firstAnimatingElems = $myCarousel.find('.item:first')
+                           .find('[data-animation ^= "animated"]');
+// Apply the animation using our function
+doAnimations($firstAnimatingElems);
+// Pause the carousel 
+$myCarousel.carousel('pause');
+
+// Attach our doAnimations() function to the
+// carousel's slide.bs.carousel event 
+$myCarousel.on('slide.bs.carousel', function (e) { 
+  // Select the elements to be animated inside the active slide 
+  var $animatingElems = $(e.relatedTarget)
+                        .find("[data-animation ^= 'animated']");
+  doAnimations($animatingElems);
+});
+
+
+
 
 //关于我
 
@@ -389,16 +429,16 @@ var  oMe=document.getElementById('me');
 oMe.onclick=function(){
 	//alert(122);
 	function create(){
-		var arr=[
-			'1. 热爱前端，喜欢所见即所得。',
-                        '2. 熟悉html,css，能够兼容主流浏览器，比如ie9+, chrome,firefox,opera。',
-                        '3. 熟悉js dom, event,ajax, jsonp能够编写基本的js原生代码。',
-			'4. 熟悉jquery api，能够编写最基本的动态交互效果。熟悉bootstrap, 了解git版本控制工具。',
-			'5. 熟悉css3,了解移动端的zoomjs和rem。',
-			'6. 能够熟练使用firebug,chrome调试工作调试代码，并能够进一步进行优化。',
-			'7. 能够熟练使用photoshop, sublime text, webstorm, editplus等工具进行前端页面开发。',
-		        '8. 了解php和mysql的基本语法。',
-			'9. 目前正在关注和学习angularjs,nodejs和移动端。'
+		var arr=['1. 热爱前端，喜欢所见即所得。',
+                 '2. 熟悉html,css，能够兼容主流浏览器，比如ie9+, chrome,firefox,opera。',
+                 '3. 熟悉js dom, event,ajax, jsonp能够编写基本的js原生代码。',
+				 '4. 熟悉jquery api，能够编写最基本的动态交互效果。熟悉bootstrap, 了解git版本控制工具。',
+				 '5. 熟悉css3,了解移动端的zoomjs和rem。',
+				 '6. 能够熟练使用firebug,chrome调试工作调试代码，并能够进一步进行优化。',
+				 '7. 能够熟练使用photoshop, sublime text, webstorm, editplus等工具进行前端页面开发。',
+				 '8. 了解php和mysql的基本语法。',
+				 '9. 目前正在关注和学习angularjs,nodejs和移动端。'
+
 		];
         var html = [];
         for(var i=0;i<arr.length;i++){
@@ -428,6 +468,19 @@ oMe.onclick=function(){
         }, 100);
     }
     render();
+
+    var  oModalme=document.getElementById('modalme');
+    var  aBtn=oModalme.getElementsByTagName('button');
+
+    for(var i=0; i<aBtn.length; i++){
+
+        aBtn[i].onclick=function (){
+            //alert(123);
+            var  result = document.getElementById('mything');
+            result.innerHTML='';
+
+        }
+    }
 
 
 }
