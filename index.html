@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fullPage页面</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="css/font-ie7.css">
+<![endif]-->
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+$(function(){
+	$('#wrap').fullpage({
+		//sectionsColor: ['#3C4145','#4BBFC3', '#7BAABE', '#6A6B6E'],
+		anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+		menu: '#menu'
+	});
+     //$('body').scrollspy({ target: '#navbar-example' })
+	// $('#ad-carousel').carousel();
+
+//调用wow
+var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: true,
+    live: true
+});
+wow.init();
+//
+
+var $myCarousel = $('#carousel-example-generic');
+// Initialize carousel
+$myCarousel.carousel();
+
+function doAnimations(elems) {
+  var animEndEv = 'webkitAnimationEnd animationend';
+  elems.each(function () {
+    var $this = $(this),
+        $animationType = $this.data('animation');
+    // Add animate.css classes to
+    // the elements to be animated 
+    // Remove animate.css classes
+    // once the animation event has ended
+    $this.addClass($animationType).one(animEndEv, function () {
+      $this.removeClass($animationType);
+    });
+  });
+}
+// Select the elements to be animated
+// in the first slide on page load
+var $firstAnimatingElems = $myCarousel.find('.item:first')
+                           .find('[data-animation ^= "animated"]');
+// Apply the animation using our function
+doAnimations($firstAnimatingElems);
+// Pause the carousel 
+$myCarousel.carousel('pause');
+
+// Attach our doAnimations() function to the
+// carousel's slide.bs.carousel event 
+$myCarousel.on('slide.bs.carousel', function (e) { 
+  // Select the elements to be animated inside the active slide 
+  var $animatingElems = $(e.relatedTarget)
+                        .find("[data-animation ^= 'animated']");
+  doAnimations($animatingElems);
+});
+
+
+});
+</script>
+</head>
+
+<body>
+<!--导航-->
+<nav class="navbar navbar-inverse  navbar-fixed-top" data-nav="#page1">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target=".navbar-collapse">
+				<span class="sr-only">导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-respond" id="menu">
+				<li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
+				<li data-menuanchor="page2"><a href="#page2">web前端</a></li>
+				<li data-menuanchor="page3"><a href="#page3">作品</a></li>
+				<li data-menuanchor="page4"><a href="#page4">关于我</a></li>
+				<li data-menuanchor="page5"><a href="#page5">留言板</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!--主题内容-->
+<div id="wrap">
+    <!--第一屏 轮播-->
+	<div class="section section1">
+		<div id="carousel-example-generic" class="carousel carousel-fade slide fullscreen waves-container" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item carousel-slider1 active">
+					<div class="carousel-content"></div>
+					<div class="carousel-caption">
+						<h1 class="lingxin-font  wow bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SUCCESS</h1>
+						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceIn">让我们为您的<span class="">成功</span>指引道路!</h3>
+						<p class="wow fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Let Us Show You the Way to Success</p>
+					</div>
+				</div>
+				<div class="item carousel-slider2">
+					<div class="carousel-content"></div>
+					<div class="carousel-caption">
+						<h1 class="lingxin-font  wow bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SPECIALTY</h1>
+						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">为您的项目提供<span class="">专业</span>技术支持!</h3>
+						<p class="wow fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Provide professional technical support for your project!</p>
+					</div>
+				</div>
+				<div class="item carousel-slider3">
+					<div class="carousel-content"></div>
+					<div class="carousel-caption">
+						<h1 class="lingxin-font wow bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">SOLUTION</h1>
+						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">我们知道如何<span class="">解决</span>您的问题!</h3>
+						<p class="wow fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">We know how to solve your problems!</p>
+					</div>
+				</div>
+				<div class="item carousel-slider4">
+					<div class="carousel-content"></div>
+					<div class="carousel-caption">
+						<h1 class="lingxin-font wow bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">FLOURISH</h1>
+						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">使您的企业永久<span class="">蓬勃发展</span>!</h3>
+						<p class="wow fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">Make your business flourish forever!</p>
+					</div>
+				</div>
+				<div class="item carousel-slider5">
+					<div class="carousel-content"></div>
+					<div class="carousel-caption">
+						<h1 class="lingxin-font wow bounceIn" data-wow-delay="0.2s" data-animation="animated bounceIn">LEARNING</h1>
+						<h3 class="lingxin-font wow bounceInUp" data-wow-delay="0.5s" data-animation="animated bounceInUp">我们也在不断学习,<span class="">与时俱进</span>!</h3>
+						<p class="wow fadeIn" data-wow-delay="1s" data-animation="animated fadeIn">We are constantly learning, advancing with the times!</p>
+					</div>
+				</div>
+			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<!--第二屏 web前端-->
+	<div class="section section2">
+		<div class="container">
+		    <div class="section-content">
+				<div class="section-title ">我的<span class=""></span>学习<span class="">园地</span>web前端</div>
+				<div class="split"><img src="images/split.png" alt="split" /></div>
+				<div class="row">
+					<div class="col-md-3 " data-wow-delay="0.4s">
+						<div class="learn-item leftOut">
+							<i class="icon-html52 my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">HTML</a></h3>
+							<p><a href=""  class="undecoration" target="_blank">想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。想好好睡一觉。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.1s">
+						<div class="learn-item leftOut">
+							<i class="icon-css3 my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">CSS</a></h3>
+							<p><a href="" class="undecoration" target="_blank">我有什么技能啊。。什么都没有。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item leftOut">
+							<i class="icon-coffee my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">Javascript</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item leftOut">
+							<i class="icon-tools my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">Jquery</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item rightOut">
+							<i class="icon-floppy my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">Bootstrap</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item rightOut">
+							<i class="icon-shrink2 my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">Angular</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item rightOut">
+							<i class="icon-git my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">自动化工具</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item rightOut">
+							<i class="icon-paypal my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">PHP</a></h3>
+							<p><a href="" class="undecoration" target="_blank">最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。最近一直在写代码。好累。</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--第三屏 作品-->
+	<div class="section section3">
+		<div class="container">
+		    <div class="section-content">
+				<div class="section-title ">我的一些<span class="">不起眼的</span><span class="">小作品</span></div>
+				<div class="split"><img src="images/split.png" alt="split" /></div>
+				<div class="row">
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item rightOut">
+							<i class="icon-file-music my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">作品一</a></h3>
+							<p class="zp-title zp-first"><a href="" class="undecoration" target="_blank">JS原生实现QQ音乐首页前端页面效果</a></p>
+						</div>
+						<div class="link">
+					   	  	<a class="button undecoration" href="">
+					   	  	   <span class="line line-top"></span>
+							   <span class="line line-right"></span>
+							   <span class="line line-bottom"></span>
+							   <span class="line line-left"></span>
+							   预览地址	
+					   	  	</a>
+						</div>
+					</div>
+					<div class="col-md-3 second" data-wow-delay="0.1s">
+						<div class="learn-item topOut">
+							<i class="icon-book my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">作品二</a></h3>
+							<p class="zp-title zp-second"><a href="" class="undecoration" target="_blank">JS原生实现豆瓣读书页的搜索和分页功能</a></p>
+							<p class="line-box" href="">
+					   	  	   <span class="line line-top"></span>
+							   <span class="line line-right"></span>
+							   <span class="line line-bottom"></span>
+							   <span class="line line-left"></span>
+						   	</p>
+						</div>
+						<div class="link">
+					   	  	<a class="button undecoration" href="">
+					   	  	   <span class="line line-top"></span>
+							   <span class="line line-right"></span>
+							   <span class="line line-bottom"></span>
+							   <span class="line line-left"></span>
+							   预览地址	
+					   	  	</a>
+					   	</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item bottomOut">
+							<i class="icon-credit-card my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">作品三</a></h3>
+							<p class="zp-title zp-three"><a href="" class="undecoration" target="_blank">JQ实现钱包官网首页前端基本效果</a></p>
+						</div>
+						<div class="link">
+					   	  	<a href="" class="button undecoration">
+					   	  	<span class="line line-top"></span>
+							   <span class="line line-right"></span>
+							   <span class="line line-bottom"></span>
+							   <span class="line line-left"></span>
+							   预览地址	
+					   	  	</a>
+					   	</div>
+					</div>
+					<div class="col-md-3" data-wow-delay="0.4s">
+						<div class="learn-item leftOut">
+							<i class="icon-spinner6 my-font highlight"></i>
+							<h3><a href="" class="undecoration" target="_blank">作品四</a></h3>
+							<p class="zp-title zp-four"><a href="" class="undecoration" target="_blank">JS原生可无限加载瀑布流</a></p>
+						</div>
+						<div class="link">
+					   	  	<a href="" class="button undecoration">
+					   	  	<span class="line line-top"></span>
+							   <span class="line line-right"></span>
+							   <span class="line line-bottom"></span>
+							   <span class="line line-left"></span>
+							   预览地址	
+					   	  	</a>
+					   	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--第四屏 关于我  -->
+	<div class="section section4">
+		<div class="container">
+		    <div class="section-content">
+				<div class="row">
+					<div class="col-md-4" data-wow-delay="0.4s">
+						<div class="learn-item one-thing">
+							<img src="images/bg91.png"/>
+							<h3><a href="" class="undecoration" target="_blank">最近在做的事</a></h3>
+						</div>
+					</div>
+					<div class="col-md-4" data-wow-delay="0.1s">
+						<div class="learn-item about-me">
+							<img src="images/bg92.png"/>
+							<h3><a href="" class="undecoration" target="_blank">关于我</a></h3>
+							<div class="link">
+						   	  	<a class="button undecoration" href="">
+						   	  	   <span class="line line-top"></span>
+								   <span class="line line-right"></span>
+								   <span class="line line-bottom"></span>
+								   <span class="line line-left"></span>
+								   点击更多	
+						   	  	</a>
+						   	</div>
+						</div>
+					</div>
+					<div class="col-md-4" data-wow-delay="0.4s">
+						<div class="learn-item done">
+							<img src="images/bg93.png"/>
+							<h3><a href="" class="undecoration" target="_blank">最近想做的事</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--第五屏 留言板-->
+	<div class="section section5">
+		<div class="container">
+			<div class="section-content">
+				<div class="board">
+					<div class="message" >
+						<p>欢迎吐槽</p>
+						<p><input type="text"  placeholder="您的昵称"/></p>
+						<p><input type="text"  placeholder="您的邮箱"/></p>
+						<p><input type="text"  placeholder="您的网址"/></p>
+						<div class="form"></div>
+					</div>
+					<p class="go"><a class="undecoration" href="">马上吐槽</a></p>
+				</div>
+			</div>
+			<footer class="footer">
+				<a>关于Yatmin</a>
+				<a>关于Yatmin的博客</a>
+			    <span>Yatmin版权所有@2016-2016</span>
+	        </footer>
+	    </div>
+	</div>
+</div>
+<!-- Modal -->
+	<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">标题</h4>
+				</div>
+				<div class="modal-body">无内容</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
